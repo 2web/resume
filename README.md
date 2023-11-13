@@ -14,7 +14,7 @@ Please replace them with your own photos and logos if you use this template!
 	</tr>
 	<tr>
 		<td>
-			<img src="https://github.com/2web/resume/blob/master/previews/pastels-hipstercv.png" 
+			<img src="https://github.com/2web/resume/blob/main/previews/pastels-hipstercv.png" 
 				alt="HipsterCV Template Pastels"
 				height="300" />
 		</td>
