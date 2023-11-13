@@ -1,0 +1,219 @@
+% a mashup of hipstercv, friggeri and twenty cv
+% https://www.latextemplates.com/template/twenty-seconds-resumecv
+% https://www.latextemplates.com/template/friggeri-resume-cv
+
+\documentclass[pastel]{simplehipstercv}
+% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
+% withoutsidebar
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[margin=1cm, a4paper]{geometry}
+\frenchspacing
+
+\usepackage[main=english]{babel}
+
+\usepackage[
+  babel=true, % Enable language-specific kerning. Take language-settings from the languge of the current document (see Section 6 of microtype.pdf)
+  expansion=alltext,
+  protrusion=alltext-nott, % Ensure that at listings, there is no change at the margin of the listing
+  final % Always enable microtype, even if in draft mode. This helps finding bad boxes quickly.
+        % In the standard configuration, this template is always in the final mode, so this option only makes a difference if "pros" use the draft mode
+]{microtype}
+
+% \texttt{test -- test} keeps the "--" as "--" (and does not convert it to an en dash)
+\DisableLigatures{encoding = T1, family = tt* }
+
+\usepackage{iftex}
+\ifluatex
+  \usepackage{fontspec}
+  \usepackage{selnolig}
+\fi
+
+%------------------------------------------------------------------ Variablen
+
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.23\textwidth}
+\setlength{\rightcolwidth}{0.75\textwidth}
+
+%------------------------------------------------------------------
+\title{Simonov Andrei CV}
+\author{\LaTeX{} sasmeo}
+\date{November 2023}
+
+\pagestyle{empty}
+\begin{document}
+
+
+\thispagestyle{empty}
+%-------------------------------------------------------------
+
+\section*{Start}
+
+\simpleheader{headercolour}{Simonov}{Andrei}{FrontEnd Developer}{white}
+
+
+
+%------------------------------------------------
+
+% this has to be here so the paracols starts..
+\subsection*{}
+\vspace{4em}
+
+\setlength{\columnsep}{1.5cm}
+\columnratio{0.23}[0.75]
+\begin{paracol}{2}
+\hbadness5000
+%\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
+
+\paracolbackgroundoptions
+
+% 0.9,0.9,0.9 -- 0.8,0.8,0.8
+
+{\setasidefontcolour
+\flushright
+\begin{center}
+    \roundpic{FOTO.png}
+\end{center}
+
+\bg{cvgreen}{white}{About me}\\[0.5em]
+
+{\footnotesize}
+Hello! I've been a FullStack PHP developer for 16 years, but in 2023 I switched to React and focused on Frontend development using React, Redux, and TypeScript.
+\bigskip
+
+\bg{cvgreen}{white}{Personal} \\[0.5em]
+Andrei Simonov
+
+nationality: Russian 
+
+location: Kazakhstan, Almaty
+
+birthdate: Feb 20 1982
+
+\bigskip
+
+\bg{cvgreen}{white}{Specialization} \\[0.5em]
+
+Web application development ~•~ Automation of processes ~•~ Markup ~•~ Interface design
+
+\bigskip
+
+
+\bigskip
+
+\bg{cvgreen}{white}{Computer Skills}\\[0.5em]
+
+Competent in Linux
+
+Proficient in Windows
+
+\bigskip
+
+\bg{cvgreen}{white}{Hobbies}\\[0.5em]
+
+carpentry 
+
+cycling trips
+
+board games
+
+\vspace{4em}
+
+\infobubblehref{\faAt}{cvgreen}{white}{sasmeo}{mailto:\emailadr}
+\infobubblehref{\faTelegram}{cvgreen}{white}{@phperin}{https://t.me/phperin}
+\infobubblehref{\faLinkedin}{cvgreen}{white}{andrei-simonov}{https://www.linkedin.com/in/andrei-simonov/}
+\infobubblehref{\faGithub}{cvgreen}{white}{2web}{https://github.com/2web}
+
+\phantom{turn the page}
+
+\phantom{turn the page}
+}
+%-----------------------------------------------------------
+\switchcolumn
+
+\small
+\section*{Short Resume}
+
+\begin{tabular}{r| p{0.57\textwidth}}
+    \cvevent{2023-pr.}{FrontEnd Developer. \protect\href{https://www.upwork.com/freelancers/~01d6ed3df030b4c05a}{Freelancer}}{Stack: React, Typescript, Redux, Next.js}{  \color{cvred}}{Development of a "Dealer Personal Cabinet" application from scratch.}{} \\
+    \cvevent{2007-2023}{FullStack Engineer (\protect\href{https://demetra.ru/}{Demetra}, LLC, Russia)}{Stack: PHP, JavaScript, jQuery, AutoIt}{ \color{cvred}}{Development of a portal to conduct the production and the economy of the enterprise.\newline Development of portal kernel in PHP to automate processes.\newline Development of UI for the portal using HTML, CSS, JS\newline Have developed and implemented author profile cutting optimization module.\newline Have developed and implemented author data upload modules to be used for production machines\newline Development of AutoIt utilities to automate routine operations.\newline Development of services for automating data transfer to the consumer (B2B).}{} \\
+    \cvevent{2004-2006}{FullStack Developer (\protect\href{https://eng.istu.edu/admission/academic-programs/automobile_roads_and_airdromes/}{Department of Automobile Roads at IRNTU}, Russia)}{Stack: Builder C++}{  \color{cvred}}{Development of software modules for the "Monitoring of Automobile Roads of the Irkutsk Region" complex.}{} \\
+\end{tabular}
+\vspace{2em}
+
+\begin{minipage}[t]{0.35\textwidth}
+\section*{Degrees}
+\begin{tabular}{r p{0.6\textwidth}}
+    \cvdegree{2004-2006}{Post-graduate course}{not finished}{\protect\href{https://eng.istu.edu/admission/academic-programs/automobile_roads_and_airdromes/}{INRTU}}{} \\
+    \cvdegree{1999-2004}{Specialist}{Diploma Certificate}{\protect\href{https://isu.ru/en/education/faculties/imei/}{ISU}}{}
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Programming}
+\begin{tabular}{r @{\hspace{0.5em}}l}
+    \bg{skilllabelcolour}{iconcolour}{react} & \barrule{0.45}{0.5em}{cvgreen} \\
+    \bg{skilllabelcolour}{iconcolour}{typescript} & \barrule{0.35}{0.5em}{cvgreen} \\
+    \bg{skilllabelcolour}{iconcolour}{javascript} & \barrule{0.35}{0.5em}{cvgreen} \\
+    \bg{skilllabelcolour}{iconcolour}{html, css} &  \barrule{0.4}{0.5em}{cvgreen}\\
+     
+\end{tabular}
+\end{minipage}
+
+\section*{Key achievements}
+\begin{tabular}{r| p{0.5\textwidth}}
+    \cvevent{2023}{FrontEnd Developer}{Stack: React, Vite, Redux, TypeScript, MUI}{ \color{cvred}}{\protect\href{https://disk.yandex.ru/i/Jp_-xJsYIxJEqA}{1st place in the hackaton} of the Yandex Practicum Workshop.}{}
+\end{tabular}
+\vspace{2em}
+
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Certificates}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
+    2023 & \protect\href{https://disk.yandex.ru/i/MC3mieiPrDZb-A}{Yandex Practicum React-developer} \\
+    2021 & \protect\href{https://disk.yandex.ru/i/ys3Sdd04DnhSHQ}{Bitrix Framework Developer Certificate}
+\end{tabular}
+\bigskip
+
+\section*{Languages}
+\begin{tabular}{l | ll}
+\textbf{Russian} & C2 & {\phantom{x}\footnotesize native} \\
+\textbf{English} & B1 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{1}{\tiny} \\
+\textbf{German} & A0 & \pictofraction{\faCircle}{cvgreen}{1}{black!30}{3}{\tiny} 
+\end{tabular}
+\bigskip
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Publications}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
+    2006 & \emph{V. Martianov, A. Simonov. Methods of network planning and situation recognition in the problem of sketch tracing}, "New technologies in the investment-construction sphere and housing and communal services".
+\end{tabular}
+\bigskip
+
+\section*{Pet projects}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.6\textwidth}}
+    2010-2015 & \protect\href{https://2web-master.ru/}{2web-master.ru}
+\end{tabular}
+\end{minipage}
+\vspace{1em}
+
+
+
+
+
+\vfill{} % Whitespace before final footer
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\rightcolwidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\small\icon{\faMapMarker}{cvgreen}{} Kazakhstan, Almaty \icon{\faPhone}{cvgreen}{} \protect\href{tel:+77053673683}{+7 705 367 3683} \icon{\faAt}{cvgreen}{} \protect\href{mailto:\emailadr}{\emailadr}
+}
+\end{center}
+\end{minipage}
+
+\end{paracol}
+
+\end{document}
